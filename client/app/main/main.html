@@ -1,17 +1,60 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
+<!-- <audio id="sound1" src="../../assets/audio/yell.wav" autostart="false" width="0" height="0" enablejavascript="true"></audio> -->
+
+<header ng-controller="MainCtrl" class="hero-unit" id="banner">
   <div class="container">
       <h1>{{currentTime}}</h1>
   </div>
 </header>
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 text-center">
-        <div ng-repeat="m in meds">
-            {{m.time}} {{m.name}} {{m.dosage}}
+    <div class="col-xs-12 col-sm-6">
+      <div id="calender" class="">
+        <h1>CALENDER</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+
+      <div id="currentTime" class="">
+        <h3>{{currentTime}}</h3>
+        <h4>{{currentDate}}</h4>
+      </div>
+
+      <div ng-controller="MainCtrl" class="missed-meds-container">
+        <div class="missed-meds-header">
+          <h2>Missed Medications</h2>
+          <hr class="hr-black">
+        </div>
+        <div ng-repeat="med in meds | filter:{missed: true}" class="missed-med text-center">
+          <h4 class="med-status"><span ng-class="med.medStatus" class="glyphicon"></span></h4>
+          <h4 class="med-time">MISSED {{med.name}} @ {{med.formattedTime}}</h4>
+        </div>
+      </div>
+
+    </div>
+
+    <div ng-controller="MainCtrl" class="col-xs-12 col-sm-6 med-block">
+        <div ng-repeat=" m in meds | orderBy: 'completed' ">
+          <div class="col-xs-12 col-sm-6">
+            <div ng-class="{ 'completed': m.completed }" class="med-container" >
+              <div class="med-status-container">
+                <h3><span ng-class="m.medStatus" class="glyphicon"></span></h3>
+              </div>
+              <div class="med-info-container">
+                <h3 class="med-time">{{m.formattedTime}}</h3>
+                <h4 class="med-name">{{m.name}}</h4>
+                <h5 class="med-dosage">{{m.dosage}}</h5>
+                <button ng-show="m.showButton" ng-click="complete(m)" type="button" name="button">complete</button>
+              </div>
+
+            </div>
+          </div>
         </div>
     </div>
+
+
   </div>
 </div>
 <footer class="footer">

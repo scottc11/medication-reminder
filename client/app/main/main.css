@@ -28,3 +28,102 @@
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
 }
+
+.hr-black {
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+.med-container {
+  background-color: rgb(157, 173, 232);
+  padding: 20px;
+  margin: 10px 0 10px 0;
+  border-radius: 10px;
+}
+
+.missed-meds-container {
+  border: 1px solid black;
+  border-radius: 25px;
+}
+
+.missed-meds-header {
+  background-color: red;
+  color: white;
+  text-align: center;
+  padding-top: 5px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+.missed-meds-header h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.missed-med {
+  text-align: center;
+  /*background-color: rgba(210, 28, 28, 1);*/
+  border-radius: 5px;
+  margin: 3px;
+}
+
+.missed-med h3,
+.missed-med h4 {
+  color: red;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  display: inline-block;
+}
+
+.med-block {
+  text-align: center;
+}
+
+.med-container {
+  /*display: inline-block;*/
+  text-align: center;
+  min-width: 50%;
+  padding: 0 5px 0 5px;
+}
+
+.med-status-container {
+  display: inline-block;
+  width: auto;
+  height: 100%;
+  padding: 0 40px 0 10px;
+  text-align: center;
+}
+
+.med-status-container h3 {
+  font-size: 3em;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.med-info-container {
+  display: inline-block;
+}
+
+.completed {
+  background-color: rgb(214, 174, 0);
+}
+
+#calender {
+  color: white;
+  text-align: center;
+  background-color: rgb(176, 181, 255);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+#currentTime {
+  color: white;
+  text-align: center;
+  background-color: rgb(176, 181, 255);
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+}
